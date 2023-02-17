@@ -1,25 +1,30 @@
 import { React, useState } from 'react';
 import './App.scss';
-import Add from './components/Button/Add';
+import Button from './components/Button';
 import Display from './components/Display';
 import InputBox from './components/InputBox';
+import ClearButton from './components/ClearButton';
 import data from './Data';
+import { peek } from '@laufire/utils/debug';
 
 const initialState = {
 	currentValue: '',
 	toDo: data,
+	update: null,
 };
 
 const App = (context) => {
 	const [state, setState] = useState(initialState);
 
+	peek(state.toDo);
 	const extendedContext = { ...context, state, setState };
 
 	return (
 		<div className="App">
 			<InputBox { ...extendedContext }/>
-			<Add { ...extendedContext }/>
+			<Button { ...extendedContext }/>
 			<Display { ...extendedContext }/>
+			<ClearButton { ...extendedContext }/>
 		</div>
 	);
 };
