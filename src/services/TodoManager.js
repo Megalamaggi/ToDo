@@ -20,7 +20,7 @@ const editTodo = (context) => {
 const clear = (context) => {
 	const { state: { toDos }} = context;
 
-	return toDos.filter((value) => value.isActive === false) ;
+	return toDos.filter((value) => value.isSelected === false) ;
 };
 
 const changeIsActive = (context) => {
@@ -30,10 +30,10 @@ const changeIsActive = (context) => {
 
 	return (
 		toDos.map((data) => {
-			const { isActive } = data;
+			const { isSelected } = data;
 
 			return data.id === value.id
-				? { ...data, isActive: !isActive }
+				? { ...data, isSelected: !isSelected }
 				: data;
 		})
 	);

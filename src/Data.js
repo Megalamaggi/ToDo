@@ -2,42 +2,42 @@ const data = [
 	{
 		text: 'test1',
 		id: 'aryik',
-		isActive: false,
+		isSelected: false,
 	},
 	{
 		text: 'test2',
 		id: 'lrmbh',
-		isActive: false,
+		isSelected: false,
 	},
 	{
 		text: 'test1',
 		id: 'iryik',
-		isActive: false,
+		isSelected: false,
 	},
 	{
 		text: 'test2',
 		id: 'mrmbh',
-		isActive: false,
+		isSelected: false,
 	},
 	{
 		text: 'test1',
 		id: 'oryik',
-		isActive: false,
+		isSelected: false,
 	},
 	{
 		text: 'test2',
 		id: 'brmbh',
-		isActive: false,
+		isSelected: false,
 	},
 	{
 		text: 'test1',
 		id: 'hryik',
-		isActive: false,
+		isSelected: false,
 	},
 	{
 		text: 'test2',
 		id: 'prmbh',
-		isActive: false,
+		isSelected: false,
 	},
 ];
 

@@ -4,11 +4,11 @@ import TodoManager from '../services/TodoManager';
 
 const CheckBox = (context) => {
 	const { state, setState, data: value } = context;
-	const { isActive } = value;
+	const { isSelected } = value;
 
 	return (
 		<Checkbox
-			checked={ isActive }
+			checked={ isSelected }
 			onClick={ () => setState({
 				...state,
 				toDos: TodoManager.changeIsActive({ ...context, value }),

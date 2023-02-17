@@ -16,7 +16,7 @@ const Add = (context) => {
 				toDos: [...toDos, {
 					text: currentValue,
 					id: rndString(idLength),
-					isActive: false,
+					isSelected: false,
 				}],
 			}) }
 		> Add
