@@ -9,7 +9,7 @@ const ClearButton = (context) => {
 		<Button
 			onClick={ () => setState({
 				...state,
-				toDo: TodoManager.clear(context),
+				toDos: TodoManager.clear(context),
 			}) }
 		>Clear
 		</Button>);

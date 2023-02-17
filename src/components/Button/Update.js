@@ -9,7 +9,7 @@ const Update = (context) => {
 		<Button
 			onClick={ () => setState({
 				...state,
-				toDo: TodoManager.editTodo(context),
+				toDos: TodoManager.editTodo(context),
 				update: null,
 				currentValue: '',
 			}) }

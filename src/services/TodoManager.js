@@ -3,33 +3,33 @@
 import { peek } from '@laufire/utils/debug';
 
 const remove = (context, value) => {
-	const { state: { toDo }} = context;
+	const { state: { toDos }} = context;
 
 	return (
-		toDo.filter((a) => a.id !== value.id)
+		toDos.filter((a) => a.id !== value.id)
 	);
 };
 
 const editTodo = (context) => {
-	const { state: { currentValue, update, toDo }} = context;
+	const { state: { currentValue, update, toDos }} = context;
 
-	return toDo.map((data) =>
+	return toDos.map((data) =>
 		(data.id === update.id ? { ...data, text: currentValue } : data));
 };
 
 const clear = (context) => {
-	const { state: { toDo }} = context;
+	const { state: { toDos }} = context;
 
-	return toDo.filter((value) => value.isActive === false) ;
+	return toDos.filter((value) => value.isActive === false) ;
 };
 
 const changeIsActive = (context) => {
-	const { state: { toDo }, value } = context;
+	const { state: { toDos }, value } = context;
 
 	peek(value);
 
 	return (
-		toDo.map((data) => {
+		toDos.map((data) => {
 			const { isActive } = data;
 
 			return data.id === value.id

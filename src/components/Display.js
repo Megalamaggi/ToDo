@@ -5,9 +5,9 @@ import CheckBox from './CheckBox';
 import ToDoText from './ToDoText';
 
 const Display = (context) => {
-	const { state: { toDo }} = context;
+	const { state: { toDos }} = context;
 
-	return toDo.map((value, key) =>
+	return toDos.map((value, key) =>
 		<Box key={ key }>
 			<CheckBox { ...{ ...context, data: value } }/>
 			<ToDoText { ...{ ...context, data: value } }/>

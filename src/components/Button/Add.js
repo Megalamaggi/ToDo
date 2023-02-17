@@ -4,7 +4,7 @@ import { rndString } from '@laufire/utils/random';
 
 const Add = (context) => {
 	const { setState, state, config: { idLength }} = context ;
-	const { currentValue, toDo } = state;
+	const { currentValue, toDos } = state;
 
 	return (
 		<Button
@@ -13,7 +13,7 @@ const Add = (context) => {
 			onClick={ () => setState({
 				...state,
 				currentValue: '',
-				toDo: [...toDo, {
+				toDos: [...toDos, {
 					text: currentValue,
 					id: rndString(idLength),
 					isActive: false,

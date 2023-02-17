@@ -13,7 +13,7 @@ const Delete = (context) => {
 			size="small"
 			onClick={ () => setState({
 				...state,
-				toDo: TodoManager.remove(context, value),
+				toDos: TodoManager.remove(context, value),
 			}) }
 		> <DeleteForever/>
 		</Button>);
