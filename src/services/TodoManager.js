@@ -39,14 +39,10 @@ const toggleText = (context) => {
 	);
 };
 
-const SelectAll = (context) => {
+const SelectAll = (context, checked) => {
 	const { state: { toDos }} = context;
 
-	return toDos.map((toDo) => {
-		const { isSelected } = toDo;
-
-		return { ...toDo, isSelected: !isSelected };
-	});
+	return toDos.map((toDo) => ({ ...toDo, isSelected: checked }));
 };
 
 const TodoManager = {

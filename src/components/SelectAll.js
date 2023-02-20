@@ -9,13 +9,12 @@ const SelectAll = (context) => {
 	return <Box>
 		<Checkbox
 			checked={ toDos.every((toDo) => toDo.isSelected === true) }
-			onClick={ () => setState({
+			onClick={ ({ target: { checked }}) => setState({
 				...state,
-				toDos: TodoManager.SelectAll(context),
+				toDos: TodoManager.SelectAll(context, checked),
 			}) }
 		/> SelectAll
-	</Box>
-	;
+	</Box>;
 };
 
 export default SelectAll;

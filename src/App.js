@@ -6,6 +6,7 @@ import InputBox from './components/InputBox';
 import ClearButton from './components/ClearButton';
 import data from './Data';
 import SelectAll from './components/SelectAll';
+import { peek } from '@laufire/utils/debug';
 
 const initialState = {
 	currentValue: '',
@@ -16,6 +17,7 @@ const initialState = {
 const App = (context) => {
 	const [state, setState] = useState(initialState);
 
+	peek(state.toDos);
 	const extendedContext = { ...context, state, setState };
 
 	return (
