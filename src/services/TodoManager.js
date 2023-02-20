@@ -39,11 +39,22 @@ const toggleText = (context) => {
 	);
 };
 
+const SelectAll = (context) => {
+	const { state: { toDos }} = context;
+
+	return toDos.map((toDo) => {
+		const { isSelected } = toDo;
+
+		return { ...toDo, isSelected: !isSelected };
+	});
+};
+
 const TodoManager = {
 	remove,
 	editTodo,
 	clear,
 	toggleText,
+	SelectAll,
 };
 
 export default TodoManager;

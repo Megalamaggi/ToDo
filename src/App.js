@@ -5,6 +5,7 @@ import Display from './components/Display';
 import InputBox from './components/InputBox';
 import ClearButton from './components/ClearButton';
 import data from './Data';
+import SelectAll from './components/SelectAll';
 
 const initialState = {
 	currentValue: '',
@@ -21,6 +22,7 @@ const App = (context) => {
 		<div className="App">
 			<InputBox { ...extendedContext }/>
 			<Button { ...extendedContext }/>
+			<SelectAll { ...extendedContext }/>
 			<Display { ...extendedContext }/>
 			<ClearButton { ...extendedContext }/>
 		</div>

@@ -7,6 +7,7 @@ const ClearButton = (context) => {
 
 	return (
 		<Button
+			variant="contained"
 			onClick={ () => setState({
 				...state,
 				toDos: TodoManager.clear(context),
