@@ -23,7 +23,7 @@ const clear = (context) => {
 	return toDos.filter((value) => value.isSelected === false) ;
 };
 
-const changeIsActive = (context) => {
+const toggleText = (context) => {
 	const { state: { toDos }, value } = context;
 
 	peek(value);
@@ -43,7 +43,7 @@ const TodoManager = {
 	remove,
 	editTodo,
 	clear,
-	changeIsActive,
+	toggleText,
 };
 
 export default TodoManager;

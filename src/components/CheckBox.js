@@ -11,7 +11,7 @@ const CheckBox = (context) => {
 			checked={ isSelected }
 			onClick={ () => setState({
 				...state,
-				toDos: TodoManager.changeIsActive({ ...context, value }),
+				toDos: TodoManager.toggleText({ ...context, value }),
 			}) }
 		/>);
 };
