@@ -8,15 +8,17 @@ const Delete = (context) => {
 
 	return (
 		<Button
+			className="delete"
 			variant="contained"
 			color="error"
 			size="small"
 			onClick={ () => setState({
 				...state,
-				toDos: TodoManager.remove(context, value),
+				toDos: TodoManager.remove({ ...context, value }),
 			}) }
 		> <DeleteForever/>
-		</Button>);
+		</Button>
+	);
 };
 
 export default Delete;

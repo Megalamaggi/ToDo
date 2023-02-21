@@ -1,8 +1,27 @@
 .App {
 	text-align: center;
+	display: flex;
+	justify-content: center;
 
 	button {
 		font-weight: bold;
 	}
 }
+
+.box{
+	width:27%
+}
+
+.Display {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.toDoText{
+	display: flex;
+	margin-top: 10px;
+	width: 80%;
+}
+
 

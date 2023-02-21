@@ -1,18 +1,30 @@
-/* eslint-disable no-console */
 
-const remove = (context, value) => {
-	const { state: { toDos }} = context;
+import { rndString } from '@laufire/utils/random';
 
-	return (
-		toDos.filter((a) => a.id !== value.id)
-	);
+const addId = (context) => {
+	const { config: { idLength },
+		state: { currentValue, toDos }} = context;
+
+	return [...toDos, {
+		text: currentValue,
+		id: rndString(idLength),
+		isSelected: false,
+	}];
+};
+
+const remove = (context) => {
+	const { state: { toDos }, value } = context;
+
+	return toDos.filter((a) => a.id !== value.id);
 };
 
 const editTodo = (context) => {
 	const { state: { currentValue, update, toDos }} = context;
 
 	return toDos.map((data) =>
-		(data.id === update.id ? { ...data, text: currentValue } : data));
+		(data.id === update.id
+			? { ...data, text: currentValue }
+			: data));
 };
 
 const clear = (context) => {
@@ -35,8 +47,8 @@ const toggleText = (context) => {
 	);
 };
 
-const SelectAll = (context, checked) => {
-	const { state: { toDos }} = context;
+const SelectAll = (context) => {
+	const { state: { toDos }, checked } = context;
 
 	return toDos.map((toDo) => ({ ...toDo, isSelected: checked }));
 };
@@ -48,6 +60,7 @@ const isEverySelected = (context) => {
 };
 
 const TodoManager = {
+	addId,
 	remove,
 	editTodo,
 	clear,

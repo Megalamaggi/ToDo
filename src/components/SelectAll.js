@@ -11,7 +11,7 @@ const SelectAll = (context) => {
 			checked={ isEverySelected(context) }
 			onClick={ ({ target: { checked }}) => setState({
 				...state,
-				toDos: TodoManager.SelectAll(context, checked),
+				toDos: TodoManager.SelectAll({ ...context, checked }),
 			}) }
 		/> SelectAll
 	</Box>;

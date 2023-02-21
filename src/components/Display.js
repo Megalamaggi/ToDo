@@ -8,7 +8,7 @@ const Display = (context) => {
 	const { state: { toDos }} = context;
 
 	return toDos.map((value, key) =>
-		<Box key={ key }>
+		<Box key={ key } className="Display">
 			<CheckBox { ...{ ...context, data: value } }/>
 			<ToDoText { ...{ ...context, data: value } }/>
 			<Delete	{ ...{ ...context, data: value } }/>

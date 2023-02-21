@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import { rndString } from '@laufire/utils/random';
+import TodoManager from '../../services/TodoManager';
 
 const Add = (context) => {
-	const { setState, state, config: { idLength }} = context ;
-	const { currentValue, toDos } = state;
+	const { setState, state } = context ;
+	const { currentValue } = state;
 
 	return (
 		<Button
@@ -13,11 +13,7 @@ const Add = (context) => {
 			onClick={ () => setState({
 				...state,
 				currentValue: '',
-				toDos: [...toDos, {
-					text: currentValue,
-					id: rndString(idLength),
-					isSelected: false,
-				}],
+				toDos: TodoManager.addId(context),
 			}) }
 		> Add
 		</Button>

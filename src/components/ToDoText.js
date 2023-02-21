@@ -6,7 +6,7 @@ const ToDoText = (context) => {
 
 	return (
 		<Box
-			sx={ { display: 'inline-block' } }
+			className="toDoText"
 			onClick={ () => setState({
 				...state,
 				currentValue: value.text,

@@ -7,6 +7,7 @@ import ClearButton from './components/ClearButton';
 import data from './Data';
 import SelectAll from './components/SelectAll';
 import { peek } from '@laufire/utils/debug';
+import { Box } from '@mui/material';
 
 const initialState = {
 	currentValue: '',
@@ -22,11 +23,13 @@ const App = (context) => {
 
 	return (
 		<div className="App">
-			<InputBox { ...extendedContext }/>
-			<Button { ...extendedContext }/>
-			<SelectAll { ...extendedContext }/>
-			<Display { ...extendedContext }/>
-			<ClearButton { ...extendedContext }/>
+			<Box className="box">
+				<InputBox { ...extendedContext }/>
+				<Button { ...extendedContext }/>
+				<SelectAll { ...extendedContext }/>
+				<Display { ...extendedContext }/>
+				<ClearButton { ...extendedContext }/>
+			</Box>
 		</div>
 	);
 };
