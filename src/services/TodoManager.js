@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 
-import { peek } from '@laufire/utils/debug';
-
 const remove = (context, value) => {
 	const { state: { toDos }} = context;
 
@@ -26,8 +24,6 @@ const clear = (context) => {
 const toggleText = (context) => {
 	const { state: { toDos }, value } = context;
 
-	peek(value);
-
 	return (
 		toDos.map((data) => {
 			const { isSelected } = data;
@@ -45,12 +41,19 @@ const SelectAll = (context, checked) => {
 	return toDos.map((toDo) => ({ ...toDo, isSelected: checked }));
 };
 
+const isEverySelected = (context) => {
+	const { state: { toDos }} = context;
+
+	return toDos.length && toDos.every((toDo) => toDo.isSelected);
+};
+
 const TodoManager = {
 	remove,
 	editTodo,
 	clear,
 	toggleText,
 	SelectAll,
+	isEverySelected,
 };
 
 export default TodoManager;

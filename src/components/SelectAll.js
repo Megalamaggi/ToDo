@@ -4,11 +4,11 @@ import TodoManager from '../services/TodoManager';
 
 const SelectAll = (context) => {
 	const { state, setState } = context;
-	const { toDos } = state;
+	const { isEverySelected } = TodoManager;
 
 	return <Box>
 		<Checkbox
-			checked={ toDos.every((toDo) => toDo.isSelected === true) }
+			checked={ isEverySelected(context) }
 			onClick={ ({ target: { checked }}) => setState({
 				...state,
 				toDos: TodoManager.SelectAll(context, checked),
