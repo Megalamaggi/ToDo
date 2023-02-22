@@ -59,6 +59,14 @@ const isEverySelected = (context) => {
 	return toDos.length && toDos.every((toDo) => toDo.isSelected);
 };
 
+const getFilter = {
+	1: ({ state: { toDos }}) => toDos,
+	2: ({ state: { toDos }}) => toDos.filter((toDo) =>
+		!toDo.isSelected),
+	3: ({ state: { toDos }}) => toDos.filter((toDo) =>
+		toDo.isSelected),
+};
+
 const TodoManager = {
 	addId,
 	remove,
@@ -67,6 +75,7 @@ const TodoManager = {
 	toggleText,
 	SelectAll,
 	isEverySelected,
+	getFilter,
 };
 
 export default TodoManager;
