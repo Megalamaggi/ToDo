@@ -1,4 +1,4 @@
-const data = [
+const toDosList = [
 	{
 		text: 'test1',
 		id: 'aryik',
@@ -16,4 +16,4 @@ const data = [
 	},
 ];
 
-export default data;
+export default toDosList;

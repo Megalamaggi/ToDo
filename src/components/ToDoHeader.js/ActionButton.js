@@ -2,7 +2,7 @@ import React from 'react';
 import Add from './Add';
 import Update from './Update';
 
-const Button = (context) => {
+const ActionButton = (context) => {
 	const { state: { update }} = context;
 
 	return	update
@@ -10,4 +10,4 @@ const Button = (context) => {
 		: <Add { ...context }/>;
 };
 
-export default Button;
+export default ActionButton;

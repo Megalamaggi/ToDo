@@ -1,33 +1,26 @@
 import { React, useState } from 'react';
-import './App.scss';
-import Button from './components/Button';
-import InputBox from './components/InputBox';
-import ClearButton from './components/ClearButton';
-import data from './Data';
-import SelectAll from './components/SelectAll';
 import { Box } from '@mui/material';
-import TabsContainer from './components/TabsContainer';
-import { peek } from '@laufire/utils/debug';
+import './App.scss';
+import ClearButton from './components/ToDoFooter.js/ClearButton';
+import toDosList from './Data';
+import TabsContainer from './components/ToDoContainer/TabsContainer';
+import ToDoHeader from './components/ToDoHeader.js/Index';
 
 const initialState = {
 	currentValue: '',
-	toDos: data,
+	toDos: toDosList,
 	update: null,
 	index: '1',
 };
 
 const App = (context) => {
 	const [state, setState] = useState(initialState);
-
-	peek(state);
 	const extendedContext = { ...context, state, setState };
 
 	return (
 		<div className="App">
 			<Box className="box">
-				<InputBox { ...extendedContext }/>
-				<Button { ...extendedContext }/>
-				<SelectAll { ...extendedContext }/>
+				<ToDoHeader { ...extendedContext }/>
 				<TabsContainer { ...extendedContext }/>
 				<ClearButton { ...extendedContext }/>
 			</Box>

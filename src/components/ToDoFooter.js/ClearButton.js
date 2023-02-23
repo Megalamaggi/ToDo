@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import TodoManager from '../services/TodoManager';
+import TodoManager from '../../services/TodoManager';
 
 const ClearButton = (context) => {
 	const { state, setState } = context;
