@@ -6,14 +6,14 @@ import CheckBox from './CheckBox';
 import ToDoText from './ToDoText';
 
 const Display = (context) => {
-	const { state: { index }} = context;
-	const filterToDo = TodoManager.getFilter[index](context);
+	const { state: { tabsValue }} = context;
+	const filterToDos = TodoManager.getFilter[tabsValue](context);
 
-	return filterToDo.map((value, key) =>
+	return filterToDos.map((value, key) =>
 		<Box key={ key } className="Display">
-			<CheckBox { ...{ ...context, data: value } }/>
-			<ToDoText { ...{ ...context, data: value } }/>
-			<Delete	{ ...{ ...context, data: value } }/>
+			<CheckBox { ...{ ...context, data: { value }} }/>
+			<ToDoText { ...{ ...context, data: { value }} }/>
+			<Delete	{ ...{ ...context, data: { value }} }/>
 		</Box>);
 };
 

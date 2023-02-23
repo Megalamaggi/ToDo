@@ -12,39 +12,13 @@ const addId = (context) => {
 	}];
 };
 
-const remove = (context) => {
-	const { state: { toDos }, value } = context;
-
-	return toDos.filter((a) => a.id !== value.id);
-};
-
 const editTodo = (context) => {
 	const { state: { currentValue, update, toDos }} = context;
 
-	return toDos.map((data) =>
-		(data.id === update.id
-			? { ...data, text: currentValue }
-			: data));
-};
-
-const clear = (context) => {
-	const { state: { toDos }} = context;
-
-	return toDos.filter((value) => value.isSelected === false) ;
-};
-
-const toggleText = (context) => {
-	const { state: { toDos }, value } = context;
-
-	return (
-		toDos.map((data) => {
-			const { isSelected } = data;
-
-			return data.id === value.id
-				? { ...data, isSelected: !isSelected }
-				: data;
-		})
-	);
+	return toDos.map((toDo) =>
+		(toDo.id === update.id
+			? { ...toDo, text: currentValue }
+			: toDo));
 };
 
 const SelectAll = (context) => {
@@ -59,22 +33,44 @@ const isEverySelected = (context) => {
 	return toDos.length && toDos.every((toDo) => toDo.isSelected);
 };
 
+const toggleText = (context) => {
+	const { state: { toDos }, value } = context;
+
+	return (
+		toDos.map((todo) => {
+			const { isSelected } = todo;
+
+			return todo.id === value.id
+				? { ...todo, isSelected: !isSelected }
+				: todo;
+		})
+	);
+};
+
+const removeToDo = (context) => {
+	const { state: { toDos }, value } = context;
+
+	return toDos.filter((toDo) => toDo.id !== value.id);
+};
+
+const clearToDo = ({ state: { toDos }}) =>
+	toDos.filter((toDo) => !toDo.isSelected) ;
+
 const getFilter = {
 	1: ({ state: { toDos }}) => toDos,
-	2: ({ state: { toDos }}) => toDos.filter((toDo) =>
-		!toDo.isSelected),
+	2: (context) => clearToDo(context),
 	3: ({ state: { toDos }}) => toDos.filter((toDo) =>
 		toDo.isSelected),
 };
 
 const TodoManager = {
 	addId,
-	remove,
 	editTodo,
-	clear,
-	toggleText,
 	SelectAll,
 	isEverySelected,
+	toggleText,
+	removeToDo,
+	clearToDo,
 	getFilter,
 };
 

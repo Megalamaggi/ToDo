@@ -10,7 +10,7 @@ const toDosList = [
 		isSelected: false,
 	},
 	{
-		text: 'test1',
+		text: 'test3',
 		id: 'iryik',
 		isSelected: false,
 	},

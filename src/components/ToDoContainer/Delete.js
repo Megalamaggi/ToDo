@@ -4,7 +4,7 @@ import TodoManager from '../../services/TodoManager';
 import { DeleteForever } from '@mui/icons-material';
 
 const Delete = (context) => {
-	const { state, setState, data: value } = context;
+	const { state, setState, data: { value }} = context;
 
 	return (
 		<Button
@@ -14,7 +14,7 @@ const Delete = (context) => {
 			size="small"
 			onClick={ () => setState({
 				...state,
-				toDos: TodoManager.remove({ ...context, value }),
+				toDos: TodoManager.removeToDo({ ...context, value }),
 			}) }
 		> <DeleteForever/>
 		</Button>

@@ -10,10 +10,11 @@ const ClearButton = (context) => {
 			variant="contained"
 			onClick={ () => setState({
 				...state,
-				toDos: TodoManager.clear(context),
+				toDos: TodoManager.clearToDo(context),
 			}) }
 		>Clear
-		</Button>);
+		</Button>
+	);
 };
 
 export default ClearButton;

@@ -1,5 +1,5 @@
-import { Box, Checkbox } from '@mui/material';
 import React from 'react';
+import { Box, Checkbox } from '@mui/material';
 import TodoManager from '../../services/TodoManager';
 
 const SelectAll = (context) => {

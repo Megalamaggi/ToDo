@@ -3,7 +3,7 @@ import React from 'react';
 import TodoManager from '../../services/TodoManager';
 
 const CheckBox = (context) => {
-	const { state, setState, data: value } = context;
+	const { state, setState, data: { value }} = context;
 	const { isSelected } = value;
 
 	return (

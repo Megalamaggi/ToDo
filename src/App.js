@@ -10,7 +10,7 @@ const initialState = {
 	currentValue: '',
 	toDos: toDosList,
 	update: null,
-	index: '1',
+	tabsValue: '1',
 };
 
 const App = (context) => {
