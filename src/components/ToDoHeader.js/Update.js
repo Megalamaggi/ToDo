@@ -7,6 +7,7 @@ const Update = (context) => {
 
 	return (
 		<Button
+			color="secondary"
 			onClick={ () => setState({
 				...state,
 				toDos: TodoManager.editTodo(context),

@@ -7,14 +7,22 @@ const ClearButton = (context) => {
 
 	return (
 		<Button
+			color="error"
 			variant="contained"
 			onClick={ () => setState({
 				...state,
 				toDos: TodoManager.clearToDo(context),
 			}) }
-		>Clear
+		>Clear All
 		</Button>
 	);
 };
 
-export default ClearButton;
+const Clear = (context) => {
+	const { state: { toDos }} = context;
+
+	return toDos.some((toDo) => toDo.isSelected)
+	&& <ClearButton { ...context }/>;
+};
+
+export default Clear;

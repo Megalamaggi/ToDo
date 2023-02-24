@@ -6,6 +6,8 @@ const InputBox = (context) => {
 
 	return (
 		<TextField
+			sx={ { border: 3, borderRadius: '8px' } }
+			size="small"
 			placeholder="To-Do"
 			value={ currentValue }
 			onChange={ ({ target: { value }}) => setState({

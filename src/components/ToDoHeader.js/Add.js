@@ -9,13 +9,14 @@ const Add = (context) => {
 	return (
 		<Button
 			disabled={ currentValue === '' }
+			color="secondary"
 			variant="contained"
 			onClick={ () => setState({
 				...state,
 				currentValue: '',
 				toDos: TodoManager.addId(context),
 			}) }
-		> Add
+		> +Add
 		</Button>
 	);
 };

@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Tab } from '@mui/material';
 import React from 'react';
@@ -9,6 +10,9 @@ const TabsContainer = (context) => {
 	return <Box>
 		<TabContext value={ tabsValue }>
 			<TabList
+				textColor="secondary"
+				indicatorColor="secondary"
+				centered={ true }
 				onChange={ (event, value) => setState({
 					...state,
 					tabsValue: value,
