@@ -1,33 +1,43 @@
 .App {
-	text-align: center;
 	display: flex;
-	justify-content: center;
-
 	button {
 		font-weight: bold;
 	}
 }
 
-.box{
-	width:27%;
+.toDoBox{
+	height:100vh;
+	width:50%;
+	background-color: rgb(245, 255, 186);
 }
 
+.taskBox{
+	height:100vh;
+	width:50%;
+	background-color: rgb(198, 245, 177);
+}
+
+.toDoHeader{
+	display: flex;
+	justify-content: center;
+	margin-top: 10%;
+}
 
 .Display {
 	display: flex;
 	background-color: antiquewhite;
 	margin-bottom: 10px;
 	border-radius: 10px;
+	width:50%;
+	margin-left: 25%;
+	justify-content: space-between;
 }
 
 .toDoText{
-	display: flex;
-	width: 80%;
 	margin-top: 10px;
+	margin-left: -20%;
+	width: 30%;
 }
 
-.DisplayText{
-position: relative;
-top:46%;
-}
+
 

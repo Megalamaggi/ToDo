@@ -3,7 +3,7 @@ import { GradeOutlined, Grade, Label } from '@mui/icons-material';
 
 import { Checkbox } from '@mui/material';
 import React from 'react';
-import TodoManager from '../../services/TodoManager';
+import TodoManager from '../../../services/TodoManager';
 
 const CheckBox = (context) => {
 	const { state, setState, data: { value }} = context;

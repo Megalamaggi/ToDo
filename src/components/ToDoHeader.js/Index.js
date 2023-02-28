@@ -5,7 +5,7 @@ import ActionButton from './ActionButton';
 import SelectAll from './SelectAll';
 
 const ToDoHeader = (context) =>
-	<Box>
+	<Box className="toDoHeader">
 		<InputBox { ...context }/>
 		<ActionButton { ...context }/>
 		<SelectAll { ... context }/>

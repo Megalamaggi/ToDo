@@ -2,11 +2,9 @@ import { React, useState } from 'react';
 import { Box } from '@mui/material';
 import './App.scss';
 import toDosList from './Data';
-import ToDoHeader from './components/ToDoHeader.js/Index';
-import ToDoFooter from './components/ToDoFooter.js/Index';
-import TabsContainer from './components/ToDoContainer/TabsContainer';
 import TodoManager from './services/TodoManager';
 import TaskList from './components/Tasks';
+import ToDos from './components/ToDos';
 
 const initialState = (context) => ({
 	currentValue: '',
@@ -24,14 +22,10 @@ const App = (context) => {
 	once(() => TodoManager.autoTaskList(extendedContext));
 
 	return (
-		<div className="App">
-			<Box className="box">
-				<ToDoHeader { ...extendedContext }/>
-				<TabsContainer { ...extendedContext }/>
-				<ToDoFooter { ...extendedContext }/>
-			</Box>
+		<Box className="App">
+			<ToDos { ...extendedContext }/>
 			<TaskList { ...extendedContext }/>
-		</div>
+		</Box>
 	);
 };
 
