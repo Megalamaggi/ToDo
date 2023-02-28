@@ -5,7 +5,7 @@ import TodoManager from '../../../services/TodoManager';
 const SelectAll = (context) => {
 	const { state, setState } = context;
 
-	return <Box>
+	return <Box className="selectAll">
 		<Checkbox
 			color="secondary"
 			checked={ TodoManager.isEverySelected(context) }
@@ -13,7 +13,7 @@ const SelectAll = (context) => {
 				...state,
 				toDos: TodoManager.SelectAll({ ...context, checked }),
 			}) }
-		/> SelectAll
+		/>
 	</Box>;
 };
 

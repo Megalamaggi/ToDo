@@ -6,12 +6,15 @@ const Add = (context) => {
 		state: { toDos, tasks }, data: { value }} = context;
 
 	return (
-		<Button onClick={ () => setState({
-			...state,
-			toDos: [...toDos, { ...value, isSelected: false }],
-			tasks: tasks.filter((task) => task.id !== value.id),
-		}) }
-		>add</Button>
+		<Button
+			variant="contained"
+			size="small"
+			onClick={ () => setState({
+				...state,
+				toDos: [...toDos, { ...value, isSelected: false }],
+				tasks: tasks.filter((task) => task.id !== value.id),
+			}) }
+		>+</Button>
 	);
 };
 

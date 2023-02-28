@@ -7,6 +7,7 @@ const ClearButton = (context) => {
 
 	return (
 		<Button
+			sx={ { marginLeft: '43%' } }
 			color="error"
 			variant="contained"
 			onClick={ () => setState({

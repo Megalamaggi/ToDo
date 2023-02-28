@@ -9,9 +9,9 @@ const DisplayTasks = (context) => {
 
 	return tasks.map((value, i) =>
 		<Box key={ i } className="DisplayText">
-			<Delete { ...{ ...context, data: { value }} }/>
 			<TasksText { ...{ ...context, data: { value }} }/>
 			<Add { ...{ ...context, data: { value }} }/>
+			<Delete { ...{ ...context, data: { value }} }/>
 		</Box>);
 };
 

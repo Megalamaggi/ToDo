@@ -3,7 +3,7 @@ import React from 'react';
 import DisplayTasks from './DisplayTasks';
 
 const TaskList = (context) => <Box className="taskBox">
-	<DisplayTasks { ...context }/>
+	<Box className="taskContainer"><DisplayTasks { ...context }/></Box>
 </Box>;
 
 export default TaskList;
