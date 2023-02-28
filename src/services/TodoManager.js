@@ -1,5 +1,6 @@
+/* eslint-disable no-magic-numbers */
 
-import { rndString } from '@laufire/utils/random';
+import { rndString, rndValue } from '@laufire/utils/random';
 
 const addId = (context) => {
 	const { config: { idLength },
@@ -63,6 +64,38 @@ const getFilter = {
 		toDo.isSelected),
 };
 
+const addIdTask = (context) => {
+	const { config: { tasks, idLength }} = context;
+
+	return	tasks.map((task) => ({ text: task, id: rndString(idLength) }));
+};
+
+const removeTask = (context) => {
+	const { state: { tasks }, value } = context;
+
+	return tasks.filter((task) => task.id !== value.id);
+};
+
+const getTasks = ({ config: { sample, idLength }}) =>
+	({ text: rndValue(sample),
+		id: rndString(idLength) });
+
+const autoTaskList = (context) => {
+	const { setState } = context;
+
+	return setInterval(() =>
+		setState((preState) => {
+			const { tasks } = preState;
+
+			return {
+				...preState,
+				tasks: tasks.length < 10
+					? [...tasks, getTasks(context)]
+					: tasks,
+			};
+		}), 2000);
+};
+
 const TodoManager = {
 	addId,
 	editTodo,
@@ -72,6 +105,9 @@ const TodoManager = {
 	removeToDo,
 	clearToDo,
 	getFilter,
+	addIdTask,
+	removeTask,
+	autoTaskList,
 };
 
 export default TodoManager;
