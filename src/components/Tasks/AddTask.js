@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 
-const Add = (context) => {
+const AddTask = (context) => {
 	const { state, setState,
 		state: { toDos, tasks }, data: { value }} = context;
 
@@ -18,4 +18,4 @@ const Add = (context) => {
 	);
 };
 
-export default Add;
+export default AddTask;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Checkbox } from '@mui/material';
 import TodoManager from '../../../services/TodoManager';
 
-const SelectAll = (context) => {
+const SelectAllToDos = (context) => {
 	const { state, setState } = context;
 
 	return <Box className="selectAll">
@@ -17,4 +17,4 @@ const SelectAll = (context) => {
 	</Box>;
 };
 
-export default SelectAll;
+export default SelectAllToDos;

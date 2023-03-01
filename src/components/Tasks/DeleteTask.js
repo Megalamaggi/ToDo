@@ -3,7 +3,7 @@ import React from 'react';
 import TodoManager from '../../services/TodoManager';
 import { DeleteForever } from '@mui/icons-material';
 
-const Delete = (context) => {
+const DeleteTask = (context) => {
 	const { state, setState, data: { value }} = context;
 
 	return (
@@ -20,4 +20,4 @@ const Delete = (context) => {
 	);
 };
 
-export default Delete;
+export default DeleteTask;

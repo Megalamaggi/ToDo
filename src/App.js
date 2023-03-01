@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import './App.scss';
 import toDosList from './Data';
 import TodoManager from './services/TodoManager';
-import TaskList from './components/Tasks';
+import Tasks from './components/Tasks';
 import ToDos from './components/ToDos';
 
 const initialState = (context) => ({
@@ -24,7 +24,7 @@ const App = (context) => {
 	return (
 		<Box className="App">
 			<ToDos { ...extendedContext }/>
-			<TaskList { ...extendedContext }/>
+			<Tasks { ...extendedContext }/>
 		</Box>
 	);
 };

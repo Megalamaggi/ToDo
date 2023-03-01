@@ -8,13 +8,13 @@
 .toDoBox{
 	height:100vh;
 	width:50%;
-	background-color: rgb(245, 255, 186);
+	background-color: rgb(243, 211, 241);
 }
 
 .taskBox{
 	height:100vh;
 	width:50%;
-	background-color: rgb(198, 245, 177);
+	background-color: rgb(224, 245, 241);
 }
 
 .toDoHeader{
@@ -25,7 +25,7 @@
 
 .Display {
 	display: flex;
-	background-color: antiquewhite;
+	background-color: rgb(255, 255, 255);
 	margin-bottom: 10px;
 	border-radius: 10px;
 	width:50%;
