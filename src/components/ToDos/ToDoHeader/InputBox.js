@@ -6,7 +6,7 @@ const InputBox = (context) => {
 
 	return (
 		<TextField
-			sx={ { border: 3, borderRadius: '8px' } }
+			class="inputBox"
 			size="small"
 			placeholder="To-Do"
 			value={ currentValue }

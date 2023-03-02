@@ -1,18 +1,14 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import AddTask from './AddTask';
-import DeleteTask from './DeleteTask';
-import TaskText from './TaskText';
+import Task from './Task';
 
-const DisplayTasks = (context) => {
+const Tasks = (context) => {
 	const { state: { tasks }} = context;
 
-	return tasks.map((value, i) =>
-		<Box key={ i } className="DisplayText">
-			<TaskText { ...{ ...context, data: { value }} }/>
-			<AddTask { ...{ ...context, data: { value }} }/>
-			<DeleteTask { ...{ ...context, data: { value }} }/>
-		</Box>);
+	return <Box className="taskContainer">
+		{tasks.map((value, i) =>
+			<Task key={ i } { ...{ ...context, data: { value }} }/>)}
+	</Box>;
 };
 
-export default DisplayTasks;
+export default Tasks;

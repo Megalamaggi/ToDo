@@ -4,11 +4,11 @@ import TabsContainer from './ToDoContainer/TabsContainer';
 import ToDoFooter from './ToDoFooter/Index';
 import ToDoHeader from './ToDoHeader/Index';
 
-const ToDos = (context) =>
-	<Box className="toDoBox">
+const ToDoPane = (context) =>
+	<Box className="toDoPane">
 		<ToDoHeader { ...context }/>
 		<TabsContainer { ...context }/>
 		<ToDoFooter { ...context }/>
 	</Box>;
 
-export default ToDos;
+export default ToDoPane;

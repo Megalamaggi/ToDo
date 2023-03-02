@@ -1,3 +1,4 @@
+import { AddTaskOutlined } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import React from 'react';
 
@@ -7,14 +8,12 @@ const AddTask = (context) => {
 
 	return (
 		<Button
-			variant="contained"
-			size="small"
 			onClick={ () => setState({
 				...state,
 				toDos: [...toDos, { ...value, isSelected: false }],
 				tasks: tasks.filter((task) => task.id !== value.id),
 			}) }
-		>+</Button>
+		><AddTaskOutlined/> </Button>
 	);
 };
 

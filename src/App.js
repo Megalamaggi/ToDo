@@ -3,8 +3,8 @@ import { Box } from '@mui/material';
 import './App.scss';
 import toDosList from './Data';
 import TodoManager from './services/TodoManager';
-import Tasks from './components/Tasks';
-import ToDos from './components/ToDos';
+import TaskPane from './components/Tasks';
+import ToDoPane from './components/ToDos';
 
 const initialState = (context) => ({
 	currentValue: '',
@@ -23,8 +23,8 @@ const App = (context) => {
 
 	return (
 		<Box className="App">
-			<ToDos { ...extendedContext }/>
-			<Tasks { ...extendedContext }/>
+			<ToDoPane { ...extendedContext }/>
+			<TaskPane { ...extendedContext }/>
 		</Box>
 	);
 };

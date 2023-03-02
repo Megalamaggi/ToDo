@@ -8,7 +8,6 @@ const Delete = (context) => {
 
 	return (
 		<Button
-			className="delete"
 			color="error"
 			size="small"
 			onClick={ () => setState({

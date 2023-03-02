@@ -1,14 +1,14 @@
+import { DeleteForever } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import React from 'react';
 import TodoManager from '../../services/TodoManager';
-import { DeleteForever } from '@mui/icons-material';
 
 const DeleteTask = (context) => {
 	const { state, setState, data: { value }} = context;
 
 	return (
 		<Button
-			variant="contained"
+			variant="outlined"
 			color="error"
 			size="small"
 			onClick={ () => setState({

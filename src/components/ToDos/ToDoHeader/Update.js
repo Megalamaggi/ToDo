@@ -8,6 +8,9 @@ const Update = (context) => {
 	return (
 		<Button
 			color="secondary"
+			variant="contained"
+			sx={ { height: '35px',
+				marginTop: '3px' } }
 			onClick={ () => setState({
 				...state,
 				toDos: TodoManager.editTodo(context),

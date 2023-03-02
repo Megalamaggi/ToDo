@@ -1,5 +1,5 @@
 
-import { GradeOutlined, Grade, Label } from '@mui/icons-material';
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
 
 import { Checkbox } from '@mui/material';
 import React from 'react';
@@ -12,9 +12,8 @@ const CheckBox = (context) => {
 	return (
 		<Checkbox
 			color="secondary"
-			{ ...Label }
-			icon={ <GradeOutlined/> }
-			checkedIcon={ <Grade/> }
+			icon={ <FavoriteBorder/> }
+			checkedIcon={ <Favorite/> }
 			checked={ isSelected }
 			onClick={ () => setState({
 				...state,

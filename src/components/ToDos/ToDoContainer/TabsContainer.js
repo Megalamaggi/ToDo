@@ -22,7 +22,9 @@ const TabsContainer = (context) => {
 				<Tab label="Active" value="2"/>
 				<Tab label="Completed" value="3"/>
 			</TabList>
-			<TabPanel value={ tabsValue }> <Display { ...context }/> </TabPanel>
+			<TabPanel value={ tabsValue }>
+				<Display { ...context }/>
+			 </TabPanel>
 		</TabContext>
 	</Box>;
 };

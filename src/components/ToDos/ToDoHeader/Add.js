@@ -11,6 +11,8 @@ const Add = (context) => {
 			disabled={ currentValue === '' }
 			color="secondary"
 			variant="contained"
+			sx={ { height: '39px',
+				marginTop: '3px' } }
 			onClick={ () => setState({
 				...state,
 				currentValue: '',
