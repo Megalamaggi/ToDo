@@ -67,7 +67,8 @@ const getFilter = {
 const addIdTask = (context) => {
 	const { config: { tasks, idLength }} = context;
 
-	return	tasks.map((task) => ({ text: task, id: rndString(idLength) }));
+	return	tasks.map((task) => ({ text: task, id: rndString(idLength),
+		time: Date.now() }));
 };
 
 const removeTask = (context) => {
@@ -78,7 +79,8 @@ const removeTask = (context) => {
 
 const getTasks = ({ config: { sample, idLength }}) =>
 	({ text: rndValue(sample),
-		id: rndString(idLength) });
+		id: rndString(idLength),
+		time: Date.now() });
 
 const autoTaskList = (context) => {
 	const { setState } = context;
@@ -96,6 +98,18 @@ const autoTaskList = (context) => {
 		}), 2000);
 };
 
+const oldestFirst = (context) => {
+	const { state: { tasks }} = context;
+
+	return tasks.sort((a, b) => a.time - b.time);
+};
+
+const latestFirst = (context) => {
+	const { state: { tasks }} = context;
+
+	return tasks.sort((a, b) => b.time - a.time);
+};
+
 const TodoManager = {
 	addId,
 	editTodo,
@@ -108,6 +122,8 @@ const TodoManager = {
 	addIdTask,
 	removeTask,
 	autoTaskList,
+	oldestFirst,
+	latestFirst,
 };
 
 export default TodoManager;

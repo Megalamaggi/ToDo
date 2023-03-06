@@ -6,6 +6,7 @@ import ToDoHeader from './ToDoHeader/Index';
 
 const ToDoPane = (context) =>
 	<Box className="toDoPane">
+		<label className="header">Todo</label>
 		<ToDoHeader { ...context }/>
 		<TabsContainer { ...context }/>
 		<ToDoFooter { ...context }/>

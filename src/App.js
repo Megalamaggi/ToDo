@@ -5,6 +5,7 @@ import toDosList from './Data';
 import TodoManager from './services/TodoManager';
 import TaskPane from './components/Tasks';
 import ToDoPane from './components/ToDos';
+import { peek } from '@laufire/utils/debug';
 
 const initialState = (context) => ({
 	currentValue: '',
@@ -18,6 +19,8 @@ const App = (context) => {
 	const { once } = context;
 	const [state, setState] = useState(initialState(context));
 	const extendedContext = { ...context, state, setState };
+
+	peek(state.tasks);
 
 	once(() => TodoManager.autoTaskList(extendedContext));
 
